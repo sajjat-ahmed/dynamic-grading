@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultsheet - Marksheet generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="main-title">Dynamic Grading</h2>
+        <div class="header-box">
+            <div class="header">
+                <span>Subject</span>
+                <span>Marks</span>
+                <span>Action</span>
+                <span>Grade</span>
+            </div>
+            <div class="body">
+                <div class="row">
+                    <label for="bangla">Bangla</label>
+                    <div class="marks-box">
+                        <input id="bangla-input" type="text" placeholder="Number you got" />
+                    </div>
+                    <div class="action-box">
+                        <button id="bangla-btn">Calculate</button>
+                    </div>
+                    <div class="grade-box">
+                        <p id="bangla-grade">F</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="english">English</label>
+                    <div class="marks-box">
+                        <input id="english-input" type="text" placeholder="Number you got" />
+                    </div>
+                    <div class="action-box">
+                        <button id="english-btn">Calculate</button>
+                    </div>
+                    <div class="grade-box">
+                        <p id="english-grade">F</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="ict">ICT</label>
+                    <div class="marks-box">
+                        <input id="ict-input" type="text" placeholder="Number you got" />
+                    </div>
+                    <div class="action-box">
+                        <button id="ict-btn">Calculate</button>
+                    </div>
+                    <div class="grade-box">
+                        <p id="ict-grade">F</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Total Mark: <strong id="total-marks">00</strong></p>
+                <div class="action-box">
+                    <button id="total-btn">Calculate</button>
+                </div>
+
+                <p>Final Grade: <strong id="final-grade">F</strong></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // bangla marks event handler
+        document.getElementById('bangla-btn').addEventListener('click', function(){
+            var banglaInput = document.getElementById('bangla-input').value;
+            var  banglaInputFloat = parseFloat(banglaInput);
+
+            var banglaGrade = document.getElementById('bangla-grade').innerText;
+            
+            if(banglaInput >= 80 && banglaInput <= 100){
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'A+';
+            }
+            else if(banglaInput >= 70 && banglaInput <= 79){
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'A';
+            }
+            else if(banglaInput >= 60 && banglaInput <= 69){
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'B';
+            }
+            else if(banglaInput >= 50 && banglaInput <= 59){
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'C';
+            }
+            else if(banglaInput >= 40 && banglaInput <= 49){
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'D';
+            }
+            else if(banglaInput >= 1 && banglaInput <= 39){
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'F';
+            }
+            else{
+                var banglaGrade = document.getElementById('bangla-grade').innerText = 'Define Input (1 - 100)';
+            }
+
+
+        })
+
+        // english marks event hadler
+        document.getElementById('english-btn').addEventListener('click', function(){
+            var englishInput = document.getElementById('english-input').value;
+            var  englishInputFloat = parseFloat(englishInput);
+
+            var englishGrade = document.getElementById('english-grade').innerText;
+            
+            if(englishInput >= 80 && englishInput <= 100){
+                var englishGrade = document.getElementById('english-grade').innerText = 'A+';
+            }
+            else if(englishInput >= 70 && englishInput <= 79){
+                var englishGrade = document.getElementById('english-grade').innerText = 'A';
+            }
+            else if(englishInput >= 60 && englishInput <= 69){
+                var englishGrade = document.getElementById('english-grade').innerText = 'B';
+            }
+            else if(englishInput >= 50 && englishInput <= 59){
+                var englishGrade = document.getElementById('english-grade').innerText = 'C';
+            }
+            else if(englishInput >= 40 && englishInput <= 49){
+                var englishGrade = document.getElementById('english-grade').innerText = 'D';
+            }
+            else if(englishInput >= 1 && englishInput <= 39){
+                var englishGrade = document.getElementById('english-grade').innerText = 'F';
+            }
+            else{
+                var englishGrade = document.getElementById('english-grade').innerText = 'Define Input (1 - 100)';
+            }
+        })
+
+        // ICT marks event havdler
+        document.getElementById('ict-btn').addEventListener('click', function(){
+            var ictInput = document.getElementById('ict-input').value;
+            var  ictInputFloat = parseFloat(ictInput);
+
+            var ictGrade = document.getElementById('ict-grade').innerText;
+            
+            if(ictInput >= 80 && ictInput <= 100){
+                var ictGrade = document.getElementById('ict-grade').innerText = 'A+';
+            }
+            else if(ictInput >= 70 && ictInput <= 79){
+                var ictGrade = document.getElementById('ict-grade').innerText = 'A';
+            }
+            else if(ictInput >= 60 && ictInput <= 69){
+                var ictGrade = document.getElementById('ict-grade').innerText = 'B';
+            }
+            else if(ictInput >= 50 && ictInput <= 59){
+                var ictGrade = document.getElementById('ict-grade').innerText = 'C';
+            }
+            else if(ictInput >= 40 && ictInput <= 49){
+                var ictGrade = document.getElementById('ict-grade').innerText = 'D';
+            }
+            else if(ictInput >= 1 && ictInput <= 39){
+                var ictGrade = document.getElementById('ict-grade').innerText = 'F';
+            }
+            else{
+                var ictGrade = document.getElementById('ict-grade').innerText = 'Define Input (1 - 100)';
+            }
+
+        })
+
+
+        // total marks event handler
+        document.getElementById('total-btn').addEventListener('click', function(){
+
+            var banglaInput = document.getElementById('bangla-input').value;
+            var  banglaInputFloat = parseFloat(banglaInput);
+
+            var englishInput = document.getElementById('english-input').value;
+            var  englishInputFloat = parseFloat(englishInput);
+
+            var ictInput = document.getElementById('ict-input').value;
+            var  ictInputFloat = parseFloat(ictInput);
+
+            var totalMarks = banglaInputFloat + englishInputFloat + ictInputFloat;
+            document.getElementById('total-marks').innerText = totalMarks;
+
+            var totalgrade = document.getElementById('final-grade').innerText;
+
+            if(totalMarks >= 240 && totalMarks <= 300){
+                var ictGrade = document.getElementById('final-grade').innerText = 'A+';
+            }
+            else if(totalMarks >= 210 && totalMarks <= 239){
+                var ictGrade = document.getElementById('final-grade').innerText = 'A';
+            }
+            else if(totalMarks >= 180 && totalMarks <= 209){
+                var ictGrade = document.getElementById('final-grade').innerText = 'B';
+            }
+            else if(totalMarks >= 150 && totalMarks <= 179){
+                var ictGrade = document.getElementById('final-grade').innerText = 'C';
+            }
+            else if(totalMarks >= 120 && totalMarks <= 149){
+                var ictGrade = document.getElementById('final-grade').innerText = 'D';
+            }
+            else if(totalMarks >= 1 && totalMarks <= 119){
+                var ictGrade = document.getElementById('final-grade').innerText = 'F';
+            }
+            else{
+                var ictGrade = document.getElementById('final-grade').innerText = 'Define All Input';
+            }
+            
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
